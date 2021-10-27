@@ -38,9 +38,10 @@ export default makeStyles({
     color: "inherit",
   },
   inputInput: {
-    padding: defaultTheme.spacing(1, 1, 1, 0),
+    padding: defaultTheme.spacing(1, 1, 1, 0) + " !important",
     paddingLeft: `calc(1em + ${defaultTheme.spacing(4)}) !important`,
     transition: defaultTheme.transitions.create("width"),
+    color: "white !important",
     width: "100%",
     [defaultTheme.breakpoints.up("md")]: { width: "20ch" },
   },
