@@ -1,32 +1,27 @@
-import { makeStyles } from "@mui/styles";
-import { alpha, createTheme } from "@mui/material/styles";
+import { alpha, makeStyles } from "@material-ui/core/styles";
 
-const defaultTheme = createTheme();
-
-export default makeStyles({
+export default makeStyles((theme) => ({
   title: {
     display: "none",
-    [defaultTheme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("sm")]: {
       display: "block",
     },
   },
   search: {
     position: "relative",
-    borderRadius: defaultTheme.shape.borderRadius,
-    backgroundColor: alpha(defaultTheme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(defaultTheme.palette.common.white, 0.25),
-    },
-    marginRight: defaultTheme.spacing(2),
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    "&:hover": { backgroundColor: alpha(theme.palette.common.white, 0.25) },
+    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
-    [defaultTheme.breakpoints.up("sm")]: {
-      marginLeft: defaultTheme.spacing(3),
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3),
       width: "auto",
     },
   },
   searchIcon: {
-    padding: defaultTheme.spacing(0, 2),
+    padding: theme.spacing(0, 2),
     height: "100%",
     position: "absolute",
     pointerEvents: "none",
@@ -38,16 +33,14 @@ export default makeStyles({
     color: "inherit",
   },
   inputInput: {
-    padding: defaultTheme.spacing(1, 1, 1, 0) + " !important",
-    paddingLeft: `calc(1em + ${defaultTheme.spacing(4)}) !important`,
-    transition: defaultTheme.transitions.create("width"),
-    color: "white !important",
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
     width: "100%",
-    [defaultTheme.breakpoints.up("md")]: { width: "20ch" },
+    [theme.breakpoints.up("md")]: { width: "20ch" },
   },
-
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
   },
-});
+}));
