@@ -5,7 +5,6 @@ const URL =
 
 export async function getPlacesData({ sw, ne }) {
   try {
-    console.log(sw, ne);
     const options = {
       params: {
         bl_latitude: sw.lat,
