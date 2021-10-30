@@ -1,9 +1,6 @@
 import axios from "axios";
 
-const URL =
-  "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
-
-export async function getPlacesData({ sw, ne }) {
+export async function getPlacesData(type, { sw, ne }) {
   try {
     const options = {
       params: {
@@ -17,6 +14,9 @@ export async function getPlacesData({ sw, ne }) {
         "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
       },
     };
+
+    const URL = `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`;
+
     const {
       data: { data },
     } = await axios.get(URL, options);
