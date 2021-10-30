@@ -35,7 +35,7 @@ const App = () => {
     setIsLoading(true);
     if (!bounds) return;
     getPlacesData(type, bounds).then((data) => {
-      setPlaces(data);
+      setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
       setIsLoading(false);
     });
   }, [type, bounds]);
